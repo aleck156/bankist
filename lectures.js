@@ -52,4 +52,10 @@ console.log([...arr, ...arr2].join('-'));
 console.log([...arr, ...arr2].join('-'));
 
 /////////////////////////////////////////////////s
-// The new at method
+// The new .at() method
+// replacing bracket [] notation with more modern stream notation
+// getting last element is easier, .at(-1), as a value, not as an array
+
+const arrayD = [23, 11, 64];
+console.log(arrayD.at(2));
+console.log(arrayD.at(-2));
