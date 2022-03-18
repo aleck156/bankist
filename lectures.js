@@ -59,3 +59,29 @@ console.log([...arr, ...arr2].join('-'));
 const arrayD = [23, 11, 64];
 console.log(arrayD.at(2));
 console.log(arrayD.at(-2));
+
+/////////////////////////////////////////////////s
+// .forEach() method
+// in each iteration, a callback function is called on the element
+// the current element of an array is being passed on to the function
+
+// .forEach() vs for of
+// you can't break/continue in .forEach()
+
+console.log(movements);
+
+for (const [index, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`You deposited ${[index, movement]}`);
+  } else {
+    console.log(`you withdrew ${[index, Math.abs(movement)]}`);
+  }
+}
+console.log(`--- .forEach() ---`);
+movements.forEach(function (movement, index) {
+  if (movement > 0) {
+    console.log(`You deposited ${[index, movement]}`);
+  } else {
+    console.log(`you withdrew ${[index, Math.abs(movement)]}`);
+  }
+});
