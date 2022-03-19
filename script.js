@@ -64,6 +64,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 
 /**
+ * Display all of user's movements on the left user panel
  * @param {Array} movement an array of all user's operations (moves)
  */
 const displayMovements = function (movements) {
