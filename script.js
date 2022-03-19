@@ -116,10 +116,10 @@ console.log(accounts);
  * Calculate account balance, log it to the console, and display it on the page
  * @param {Object} account an object with owner and movements properties
  */
-const calcPrintBalance = function (account) {
+const calcDisplayBalance = function (account) {
   const accBalance = account.movements.reduce((acc, cur) => acc + cur, 0);
   console.log(`Account owner: ${account.owner} // Balance:s ${accBalance}`);
   labelBalance.textContent = `${accBalance} €`;
 };
 
-calcPrintBalance(account1);
+calcDisplayBalance(account1);
