@@ -67,6 +67,8 @@ const inputClosePin = document.querySelector('.form__input--pin');
  * @param {Array} movement an array of all user's operations (moves)
  */
 const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
+
   movements.forEach((mov, i) => {
     console.log(mov, i);
     const movType = mov > 0 ? 'deposit' : 'withdrawal';
