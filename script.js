@@ -85,3 +85,29 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
+
+// using .forEach()
+// we do not want to create new array
+// the goal is to modify the original source of data
+// DEPENDENCY INJECTION ?!
+
+/**
+ * create username property on all accounts
+ *
+ * username are owners initials
+ *
+ * @param {Array} accounts an array of accounts, with owner property
+ */
+const createUserNames = function (accounts) {
+  accounts.forEach((account, i) => {
+    account.username = account.owner
+      .toLowerCase()
+      .split(' ')
+      .map(word => word[0])
+      .join('');
+  });
+};
+
+createUserNames(accounts);
+
+console.log(accounts);
