@@ -86,7 +86,7 @@ movements.forEach(function (movement, index) {
   }
 });
 
-/////////////////////////////////////////////////s
+/////////////////////////////////////////////////
 // .forEach() method applied to Maps and Sets
 currencies.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
@@ -97,3 +97,45 @@ const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'GBP']);
 currenciesUnique.forEach(function (value, _, set) {
   console.log(`${value}: ${_}`);
 });
+
+/////////////////////////////////////////////////s
+// 149. Data transformation
+// MAP / FILTER / REDUCE
+
+// MAP
+// similar to forEach
+// returns new array based on current array and a callback function
+// source array is left untouched
+
+// with forEach(), we created a side effect - we called console.log() for every argument passed into
+// this is BAD PROGRAMMING 101
+// with map(), first we generate the end result string, and only afterward we pass it to console
+const eurToUsd = 1.1;
+const movementsUSD = movements.map(val => val * eurToUsd);
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSD2 = [];
+for (const mov of movements) {
+  movementsUSD2.push(mov * eurToUsd);
+}
+console.log(movementsUSD2);
+
+const movementsDescriptions = movements.map((mov, i) => {
+  `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+    mov
+  )}`;
+});
+console.log(movementsDescriptions);
+
+// FILTER
+// filter for elements in original array that pass a certain test condition
+// returns new array
+
+// REDUCE
+// reduces all array elements into one, single value
+// e.g. add all elements into one sum, silnia
+// returns only one value - the new one
+const testingOut = [1, 2, 3, 4, 5];
+const result = testingOut.reduce((prev, curr) => (curr = curr * prev));
+console.log(result);
