@@ -10,7 +10,7 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/////////////////////////////////////////////////s
+/////////////////////////////////////////////////
 // arrays have methods
 // thus arrays are also objects
 // they have access to special methods
@@ -51,7 +51,7 @@ console.log([...arr, ...arr2].join('-'));
 // JOIN //
 console.log([...arr, ...arr2].join('-'));
 
-/////////////////////////////////////////////////s
+/////////////////////////////////////////////////
 // The new .at() method
 // replacing bracket [] notation with more modern stream notation
 // getting last element is easier, .at(-1), as a value, not as an array
@@ -60,7 +60,7 @@ const arrayD = [23, 11, 64];
 console.log(arrayD.at(2));
 console.log(arrayD.at(-2));
 
-/////////////////////////////////////////////////s
+/////////////////////////////////////////////////
 // .forEach() method
 // in each iteration, a callback function is called on the element
 // the current element of an array is being passed on to the function
@@ -98,7 +98,7 @@ currenciesUnique.forEach(function (value, _, set) {
   console.log(`${value}: ${_}`);
 });
 
-/////////////////////////////////////////////////s
+/////////////////////////////////////////////////
 // 149. Data transformation
 // MAP / FILTER / REDUCE
 
@@ -164,3 +164,15 @@ const maxValue = movements.reduce(
   movements[0]
 );
 console.log(maxValue);
+
+/////////////////////////////////////////////////
+// 155. The magic of chaining methods
+
+// clean to read
+// hard to debug
+// use code block, with console.log()
+const totalDepositsUsd = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(`Total deposits (in USD): ${totalDepositsUsd}`);
