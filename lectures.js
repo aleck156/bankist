@@ -146,8 +146,14 @@ console.log(`List of withdrawals: ${withdrawals.join(', ')}`);
 
 // REDUCE
 // reduces all array elements into one, single value
-// e.g. add all elements into one sum, silnia
+// e.g. add all elements into one sum, factorials
 // returns only one value - the new one
 // const testingOut = [1, 2, 3, 4, 5];
 // const result = testingOut.reduce((prev, curr) => (curr = curr * prev));
 // console.log(result);
+console.log(movements);
+const balance = movements.reduce(function (acc, curr, i) {
+  console.log(`Iteration ${i}: ${acc} // Next: ${curr}`);
+  return curr + acc;
+}, 0);
+console.log(balance);
