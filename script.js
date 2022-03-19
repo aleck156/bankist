@@ -111,3 +111,12 @@ const createUserNames = function (accounts) {
 createUserNames(accounts);
 
 console.log(accounts);
+
+const calcPrintBalance = function (accs) {
+  accs.forEach(function (elem) {
+    const accBalance = elem.movements.reduce((acc, cur) => acc + cur, 0);
+    console.log(`Account owner: ${elem.owner} // Balance: ${accBalance}`);
+  });
+};
+
+calcPrintBalance(accounts);
