@@ -6,8 +6,11 @@ const data2 = [16, 6, 10, 5, 6, 1, 4];
 const dataSet = [data1, data2];
 
 /**
+ * Calculate average of human age's from an array of dog's ages
  *
+ * excluded are ages of dogs younger than 2 years (pups), and those whose human age is below 18
  * @param {Array} ages an array of integers, dog's ages
+ * @return {Number} average age of all dog, converted to human age
  */
 const calcAverageHumanAge = function (ages) {
   const calculatedAges = ages
