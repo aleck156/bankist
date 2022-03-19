@@ -132,11 +132,17 @@ console.log(movementsDescriptions);
 // FILTER
 // filter for elements in original array that pass a certain test condition
 // returns new array
+// callback function returns a boolean value
+// based on that value, .filter() either includes that specific value in the final array, or not
 console.log(movements);
 const deposits = movements.filter(function (mov) {
   return mov > 0;
 });
 console.log(deposits);
+
+// create an array of withdrawals
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(`List of withdrawals: ${withdrawals.join(', ')}`);
 
 // REDUCE
 // reduces all array elements into one, single value
