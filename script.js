@@ -113,14 +113,13 @@ createUserNames(accounts);
 console.log(accounts);
 
 /**
- * Calculate account balance for every account, log it to the console
- * @param {Array} accs an array of accounts, with owner and movement properties
+ * Calculate account balance, log it to the console, and display it on the page
+ * @param {Object} account an object with owner and movements properties
  */
-const calcPrintBalance = function (accs) {
-  accs.forEach(function (elem) {
-    const accBalance = elem.movements.reduce((acc, cur) => acc + cur, 0);
-    console.log(`Account owner: ${elem.owner} // Balance: ${accBalance}`);
-  });
+const calcPrintBalance = function (account) {
+  const accBalance = account.movements.reduce((acc, cur) => acc + cur, 0);
+  console.log(`Account owner: ${account.owner} // Balance:s ${accBalance}`);
+  labelBalance.textContent = accBalance + '€';
 };
 
-calcPrintBalance(accounts);
+calcPrintBalance(account1);
