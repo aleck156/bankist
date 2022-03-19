@@ -133,9 +133,17 @@ const calcDisplaySummary = function (movements) {
   const incomes = movements
     .filter(mov => mov > 0)
     .reduce((acc, cur) => acc + cur, 0);
+
+  labelSumIn.textContent = `${incomes} €`;
+
   const outcomes = movements
     .filter(mov => mov < 0)
     .reduce((acc, cur) => acc + cur, 0);
+
+  labelSumOut.textContent = `${outcomes} €`;
+
+  // const interest = '';
+  // labelSumInterest.textContent = '';
 };
 
 calcDisplaySummary(account1.movements);
