@@ -85,3 +85,15 @@ movements.forEach(function (movement, index) {
     console.log(`you withdrew ${[index, Math.abs(movement)]}`);
   }
 });
+
+/////////////////////////////////////////////////s
+// .forEach() method applied to Maps and Sets
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'GBP']);
+currenciesUnique.forEach(function (value, _, set) {
+  console.log(`${value}: ${_}`);
+});
