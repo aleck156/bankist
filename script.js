@@ -140,7 +140,7 @@ const calcDisplaySummary = function (movements) {
     .filter(mov => mov < 0)
     .reduce((acc, cur) => acc + cur, 0);
 
-  labelSumOut.textContent = `${outcomes} €`;
+  labelSumOut.textContent = `${Math.abs(outcomes)} €`;
 
   // const interest = '';
   // labelSumInterest.textContent = '';
