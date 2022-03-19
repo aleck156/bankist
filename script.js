@@ -112,6 +112,10 @@ createUserNames(accounts);
 
 console.log(accounts);
 
+/**
+ * Calculate account balance for every account, log it to the console
+ * @param {Array} accs an array of accounts, with owner and movement properties
+ */
 const calcPrintBalance = function (accs) {
   accs.forEach(function (elem) {
     const accBalance = elem.movements.reduce((acc, cur) => acc + cur, 0);
