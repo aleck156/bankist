@@ -119,7 +119,7 @@ console.log(accounts);
 const calcPrintBalance = function (account) {
   const accBalance = account.movements.reduce((acc, cur) => acc + cur, 0);
   console.log(`Account owner: ${account.owner} // Balance:s ${accBalance}`);
-  labelBalance.textContent = accBalance + '€';
+  labelBalance.textContent = `${accBalance} €`;
 };
 
 calcPrintBalance(account1);
