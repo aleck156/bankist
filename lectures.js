@@ -121,21 +121,27 @@ for (const mov of movements) {
 }
 console.log(movementsUSD2);
 
-const movementsDescriptions = movements.map((mov, i) => {
-  `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-    mov
-  )}`;
-});
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
 console.log(movementsDescriptions);
 
 // FILTER
 // filter for elements in original array that pass a certain test condition
 // returns new array
+console.log(movements);
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(deposits);
 
 // REDUCE
 // reduces all array elements into one, single value
 // e.g. add all elements into one sum, silnia
 // returns only one value - the new one
-const testingOut = [1, 2, 3, 4, 5];
-const result = testingOut.reduce((prev, curr) => (curr = curr * prev));
-console.log(result);
+// const testingOut = [1, 2, 3, 4, 5];
+// const result = testingOut.reduce((prev, curr) => (curr = curr * prev));
+// console.log(result);
