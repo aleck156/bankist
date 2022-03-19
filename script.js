@@ -123,3 +123,19 @@ const calcDisplayBalance = function (account) {
 };
 
 calcDisplayBalance(account1);
+
+/**
+ *
+ * @param {Array} movements an array of financial movements of an account
+ */
+const calcDisplaySummary = function (movements) {
+  console.log(movements);
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, cur) => acc + cur, 0);
+  const outcomes = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, cur) => acc + cur, 0);
+};
+
+calcDisplaySummary(account1.movements);
