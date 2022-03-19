@@ -17,7 +17,7 @@ const calcAverageHumanAge = function (ages) {
   console.log(`Calculated ages: ` + calculatedAges.join(', '));
   const averageAge =
     calculatedAges.reduce((acc, cur) => acc + cur, 0) / calculatedAges.length;
-  console.log(`Average human age of all adult dogs: ${averageAge}`);
+  return averageAge;
 };
 
 // console.log(data1);
@@ -29,5 +29,6 @@ const calcAverageHumanAge = function (ages) {
 dataSet.forEach(function (value, index) {
   console.log(`Calculating data set ${index + 1}:`);
   console.log(value);
-  calcAverageHumanAge(value);
+  const avgAge = calcAverageHumanAge(value);
+  console.log(`Average human age of all adult dogs: ${avgAge}`);
 });
