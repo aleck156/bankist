@@ -151,6 +151,15 @@ const calcDisplaySummary = function (account) {
   labelSumInterest.textContent = `${interest} €`;
 };
 
+const updateUI = function (acc) {
+  // display movements
+  displayMovements(acc.movements);
+  // display balance
+  calcDisplayBalance(acc);
+  // display summary
+  calcDisplaySummary(acc);
+};
+
 /////////////////////////////////////////////////
 // EVENT HANDLERS
 // this button is attached to a form, so the default action for html page is to reload it
@@ -173,12 +182,8 @@ btnLogin.addEventListener('click', function (e) {
     } ...`;
 
     containerApp.style.opacity = 1;
-    // display movements
-    displayMovements(currentAccount.movements);
-    // display balance
-    calcDisplayBalance(currentAccount);
-    // display summary
-    calcDisplaySummary(currentAccount);
+
+    updateUI(currentAccount);
 
     // clear login form fields once loged ing
     inputLoginUsername.value = inputLoginPin.value = '';
