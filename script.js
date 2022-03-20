@@ -217,6 +217,8 @@ btnTransfer.addEventListener('click', function (e) {
     );
     currentAccount.movements.push(amount * -1);
     receiverAcc.movements.push(amount);
+
+    updateUI(currentAccount);
   }
 
   // validation
