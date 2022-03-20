@@ -184,3 +184,7 @@ btnLogin.addEventListener('click', function (e) {
     console.log(`wrong pin!`);
   }
 });
+
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+});
