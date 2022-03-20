@@ -125,10 +125,11 @@ const calcDisplayBalance = function (account) {
 calcDisplayBalance(account1);
 
 /**
- *
+ * interest is 1.2 on all deposits only
  * @param {Array} movements an array of financial movements of an account
+ * @param {Number} interestRate a ratio at which an interest is calculated, only from income movements
  */
-const calcDisplaySummary = function (movements) {
+const calcDisplaySummary = function (movements, interestRate = 1.2) {
   console.log(movements);
   const incomes = movements
     .filter(mov => mov > 0)
@@ -142,8 +143,8 @@ const calcDisplaySummary = function (movements) {
 
   labelSumOut.textContent = `${Math.abs(outcomes)} €`;
 
-  // const interest = '';
-  // labelSumInterest.textContent = '';
+  const interest = incomes * (interestRate / 100);
+  labelSumInterest.textContent = `${interest} €`;
 };
 
 calcDisplaySummary(account1.movements);
