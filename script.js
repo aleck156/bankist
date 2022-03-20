@@ -125,12 +125,13 @@ const calcDisplayBalance = function (account) {
 calcDisplayBalance(account1);
 
 /**
+ * Update values of IN, OUT and INTEREST you see on the main page based on user's movements
  *
  * added rule 1: only interests that are above 1.00 € are to be calculated
  *
  * interest is 1.2 on all deposits only
  * @param {Array} movements an array of financial movements of an account
- * @param {Number} interestRate a ratio at which an interest is calculated, only from income movements
+ * @param {Number} interestRate a ratio at which an interest is calculated, only from income movements, default value is 1.2
  */
 const calcDisplaySummary = function (movements, interestRate = 1.2) {
   console.log(movements);
