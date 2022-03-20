@@ -176,3 +176,51 @@ const totalDepositsUsd = movements
   .map(mov => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(`Total deposits (in USD): ${totalDepositsUsd}`);
+
+/////////////////////////////////////////////////
+// 157. The find Method
+
+// returns the first element in the array that satisfies the condition
+// 2 fundamental differences between .find() and .filter()
+// .find() returns only the first one, while .filter() returns an entire array that match it
+// .filter() returns NEW ARRAY with copied values, whereas .find() returns only the element itself
+let firstWithdrawal = movements.find(mov => mov < 0);
+firstWithdrawal = 17;
+console.log(movements);
+console.log(firstWithdrawal);
+
+// console.log(accounts.);
+
+// Data
+const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: 'Jessica Davis',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: 'Steven Thomas Williams',
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: 'Sarah Smith',
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
