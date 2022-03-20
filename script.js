@@ -110,10 +110,10 @@ createUserNames(accounts);
 
 /**
  * Calculate account balance, log it to the console, and display it on the page
- * @param {Array} movements all of users transaction movements
+ * @param {Object} account  user's account, with movement, interestRate fields
  */
-const calcDisplayBalance = function (movements) {
-  const accBalance = movements.reduce((acc, cur) => acc + cur, 0);
+const calcDisplayBalance = function (account) {
+  const accBalance = account.movements.reduce((acc, cur) => acc + cur, 0);
   // console.log(`Account owner: ${account.owner} // Balance: ${accBalance}`);
   labelBalance.textContent = `${accBalance} €`;
 };
@@ -148,6 +148,7 @@ const calcDisplaySummary = function (account) {
   labelSumInterest.textContent = `${interest} €`;
 };
 
+/////////////////////////////////////////////////
 // EVENT HANDLERS
 // this button is attached to a form, so the default action for html page is to reload it
 // it's attached to a form, so pressing ENTER key also triggers sending that form to the server
@@ -172,7 +173,7 @@ btnLogin.addEventListener('click', function (e) {
     // display movements
     displayMovements(currentAccount.movements);
     // display balance
-    calcDisplayBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
     // display summary
     calcDisplaySummary(currentAccount);
 
