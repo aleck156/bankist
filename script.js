@@ -116,6 +116,7 @@ const calcDisplayBalance = function (account) {
   const accBalance = account.movements.reduce((acc, cur) => acc + cur, 0);
   // console.log(`Account owner: ${account.owner} // Balance: ${accBalance}`);
   labelBalance.textContent = `${accBalance} €`;
+  account.balance = accBalance;
 };
 
 /**
