@@ -206,6 +206,8 @@ btnTransfer.addEventListener('click', function (e) {
     console.log(
       `Transferring ${amount} from ${currentAccount.username} to ${receiverAcc.username}`
     );
+    currentAccount.movements.push(amount * -1);
+    receiverAcc.movements.push(amount);
   }
 
   // validation
