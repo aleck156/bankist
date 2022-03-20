@@ -176,6 +176,8 @@ btnLogin.addEventListener('click', function (e) {
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(' ')[0]
     } ...`;
+
+    containerApp.style.opacity = 1;
     // display movements
     displayMovements(currentAccount.movements);
     // display balance
