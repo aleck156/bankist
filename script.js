@@ -222,3 +222,7 @@ btnTransfer.addEventListener('click', function (e) {
     updateUI(currentAccount);
   }
 });
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+});
