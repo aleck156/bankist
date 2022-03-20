@@ -177,7 +177,7 @@ btnLogin.addEventListener('click', function (e) {
     // display balance
     calcDisplayBalance(currentAccount.movements);
     // display summary
-    calcDisplaySummary(currentAccount.movements);
+    calcDisplaySummary(currentAccount.movements, currentAccount.interestRate);
 
     // clear login form fields once loged ing
     inputLoginUsername.value = inputLoginPin.value = '';
