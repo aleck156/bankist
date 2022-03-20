@@ -177,10 +177,11 @@ btnLogin.addEventListener('click', function (e) {
       currentAccount.owner.split(' ')[0]
     } ...`;
     // display movements
-
+    displayMovements(currentAccount.movements);
     // display balance
-
+    calcDisplayBalance(currentAccount);
     // display summary
+    calcDisplaySummary(currentAccount.movements);
   } else {
     console.log(`wrong pin!`);
   }
