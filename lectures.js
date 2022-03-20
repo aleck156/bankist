@@ -224,3 +224,6 @@ const accounts = [account1, account2, account3, account4];
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
+
+/////////////////////////////////////////////////
+// 160. The findIndex Method

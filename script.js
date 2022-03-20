@@ -221,8 +221,4 @@ btnTransfer.addEventListener('click', function (e) {
 
     updateUI(currentAccount);
   }
-
-  // validation
-  // does the recipient exists?
-  // does the sender have enough deposits?
 });
