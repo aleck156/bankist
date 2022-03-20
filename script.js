@@ -204,6 +204,8 @@ btnTransfer.addEventListener('click', function (e) {
     acc => acc.username === inputTransferTo.value
   );
 
+  inputTransferAmount.value = inputTransferTo.value = '';
+
   if (
     amount > 0 && // transferring only positive amount of money
     receiverAcc &&
