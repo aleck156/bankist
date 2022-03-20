@@ -196,6 +196,14 @@ btnTransfer.addEventListener('click', function (e) {
   );
   console.log(receiverAcc, amount);
 
+  if (
+    amount > 0 && // transferring only positive amount of money
+    amount <= currentAccount.balance && // can the sender afford to transfer that amount of money
+    receiverAcc.username !== currentAccount.username && // disable sending money to the same acc
+    receiverAcc != null // receiver actually exists
+  ) {
+  }
+
   // validation
   // does the recipient exists?
   // does the sender have enough deposits?
