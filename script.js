@@ -156,3 +156,24 @@ const calcDisplaySummary = function (movements, interestRate = 1.2) {
 };
 
 calcDisplaySummary(account1.movements);
+
+// EVENT HANDLERS
+// this button is attached to a form, so the default action for html page is to reload it
+// it's attached to a form, so pressing ENTER key also triggers sending that form to the server
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  // the only way to prevent submitting a form and triggering page reload
+  e.preventDefault();
+  // creating artifacts ...
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  // console.log(currentAccount);
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    console.log(`correct pin`);
+    // display UI and a welcome message
+  } else {
+    console.log(`wrong pin!`);
+  }
+});
