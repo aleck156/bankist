@@ -173,6 +173,14 @@ btnLogin.addEventListener('click', function (e) {
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     console.log(`correct pin`);
     // display UI and a welcome message
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    } ...`;
+    // display movements
+
+    // display balance
+
+    // display summary
   } else {
     console.log(`wrong pin!`);
   }
