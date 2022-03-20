@@ -178,6 +178,9 @@ btnLogin.addEventListener('click', function (e) {
     calcDisplayBalance(currentAccount.movements);
     // display summary
     calcDisplaySummary(currentAccount.movements);
+
+    // clear login form fields once loged ing
+    inputLoginUsername.value = inputLoginPin.value = '';
   } else {
     console.log(`wrong pin!`);
   }
