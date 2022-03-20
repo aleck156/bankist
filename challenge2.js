@@ -41,14 +41,10 @@ dataSet.forEach(function (value, index) {
 const calcAverageHumanAge2 = ages => {
   const calculatedAges = ages
     .map(age => (age > 2 ? 16 + age * 4 : age * 2))
-    .filter(dogAge => dogAge >= 18);
+    .filter(dogAge => dogAge >= 18)
+    .reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-  console.log(`Calculated ages: ` + calculatedAges.join(', '));
-  const averageAge = calculatedAges.reduce(
-    (acc, cur, i, arr) => acc + cur / arr.length,
-    0
-  );
-  return averageAge;
+  return calculatedAges;
 };
 
 dataSet.forEach(function (value, index) {
