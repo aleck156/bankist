@@ -151,8 +151,6 @@ const calcDisplaySummary = function (movements, interestRate = 1.2) {
     .map(deposit => (deposit * interestRate) / 100)
     .filter(dep => dep > 1.0) // added rule 1
     .reduce((acc, int) => acc + int, 0);
-
-  // incomes * (interestRate / 100);
   labelSumInterest.textContent = `${interest} €`;
 };
 
