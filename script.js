@@ -123,29 +123,27 @@ const calcDisplayBalance = function (movements) {
 /**
  * Update values of IN, OUT and INTEREST you see on the main page based on user's movements
  *
- * added rule 1: only interests that are above 1.00 € are to be calculated
+ * added rule 1: only interests that are above 1.00 € are to be calculated and included
  *
- * interest is 1.2 on all deposits only
- * @param {Array} movements an array of financial movements of an account
- * @param {Number} interestRate a ratio at which an interest is calculated, only from income movements, default value is 1.2
+ * @param {Object} account  user's account, with movement, interestRate fields
  */
-const calcDisplaySummary = function (movements, interestRate = 1.2) {
-  console.log(movements);
-  const incomes = movements
+const calcDisplaySummary = function (account) {
+  console.log(account.movements);
+  const incomes = account.movements
     .filter(mov => mov > 0)
     .reduce((acc, cur) => acc + cur, 0);
 
   labelSumIn.textContent = `${incomes} €`;
 
-  const outcomes = movements
+  const outcomes = account.movements
     .filter(mov => mov < 0)
     .reduce((acc, cur) => acc + cur, 0);
 
   labelSumOut.textContent = `${Math.abs(outcomes)} €`;
 
-  const interest = movements
+  const interest = account.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * interestRate) / 100)
+    .map(deposit => (deposit * account.interestRate) / 100)
     .filter(dep => dep > 1.0) // added rule 1
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest} €`;
@@ -177,7 +175,7 @@ btnLogin.addEventListener('click', function (e) {
     // display balance
     calcDisplayBalance(currentAccount.movements);
     // display summary
-    calcDisplaySummary(currentAccount.movements, currentAccount.interestRate);
+    calcDisplaySummary(currentAccount);
 
     // clear login form fields once loged ing
     inputLoginUsername.value = inputLoginPin.value = '';
