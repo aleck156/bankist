@@ -203,7 +203,6 @@ btnTransfer.addEventListener('click', function (e) {
   const receiverAcc = accounts.find(
     acc => acc.username === inputTransferTo.value
   );
-  console.log(receiverAcc, `Amount: ${amount}`);
 
   if (
     amount > 0 && // transferring only positive amount of money
