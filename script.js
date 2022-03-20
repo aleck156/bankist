@@ -181,6 +181,7 @@ btnLogin.addEventListener('click', function (e) {
 
     // clear login form fields once loged ing
     inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
   } else {
     console.log(`wrong pin!`);
   }
