@@ -151,6 +151,10 @@ const calcDisplaySummary = function (account) {
   labelSumInterest.textContent = `${interest} €`;
 };
 
+/**
+ * display movements, balance and summary for a given account
+ * @param {Object} acc user account
+ */
 const updateUI = function (acc) {
   // display movements
   displayMovements(acc.movements);
