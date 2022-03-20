@@ -112,10 +112,10 @@ console.log(accounts);
 
 /**
  * Calculate account balance, log it to the console, and display it on the page
- * @param {Object} account an object with owner and movements properties
+ * @param {Array} movements all of users transaction movements
  */
-const calcDisplayBalance = function (account) {
-  const accBalance = account.movements.reduce((acc, cur) => acc + cur, 0);
+const calcDisplayBalance = function (movements) {
+  const accBalance = movements.reduce((acc, cur) => acc + cur, 0);
   // console.log(`Account owner: ${account.owner} // Balance: ${accBalance}`);
   labelBalance.textContent = `${accBalance} €`;
 };
@@ -175,7 +175,7 @@ btnLogin.addEventListener('click', function (e) {
     // display movements
     displayMovements(currentAccount.movements);
     // display balance
-    calcDisplayBalance(currentAccount);
+    calcDisplayBalance(currentAccount.movements);
     // display summary
     calcDisplaySummary(currentAccount.movements);
   } else {
