@@ -108,8 +108,6 @@ const createUserNames = function (accounts) {
 
 createUserNames(accounts);
 
-console.log(accounts);
-
 /**
  * Calculate account balance, log it to the console, and display it on the page
  * @param {Array} movements all of users transaction movements
