@@ -125,6 +125,9 @@ const calcDisplayBalance = function (account) {
 calcDisplayBalance(account1);
 
 /**
+ *
+ * added rule 1: only interests that are above 1.00 € are to be calculated
+ *
  * interest is 1.2 on all deposits only
  * @param {Array} movements an array of financial movements of an account
  * @param {Number} interestRate a ratio at which an interest is calculated, only from income movements
@@ -143,7 +146,13 @@ const calcDisplaySummary = function (movements, interestRate = 1.2) {
 
   labelSumOut.textContent = `${Math.abs(outcomes)} €`;
 
-  const interest = incomes * (interestRate / 100);
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * interestRate) / 100)
+    .filter(dep => dep > 1.0) // added rule 1
+    .reduce((acc, int) => acc + int, 0);
+
+  // incomes * (interestRate / 100);
   labelSumInterest.textContent = `${interest} €`;
 };
 
