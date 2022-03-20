@@ -71,7 +71,7 @@ const displayMovements = function (movements) {
   containerMovements.innerHTML = '';
 
   movements.forEach((mov, i) => {
-    console.log(mov, i);
+    // console.log(mov, i);
     const movType = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `
     <div class="movements__row">
@@ -126,7 +126,7 @@ const calcDisplayBalance = function (movements) {
  * @param {Object} account  user's account, with movement, interestRate fields
  */
 const calcDisplaySummary = function (account) {
-  console.log(account.movements);
+  // console.log(account.movements);
   const incomes = account.movements
     .filter(mov => mov > 0)
     .reduce((acc, cur) => acc + cur, 0);
@@ -144,6 +144,7 @@ const calcDisplaySummary = function (account) {
     .map(deposit => (deposit * account.interestRate) / 100)
     .filter(dep => dep > 1.0) // added rule 1
     .reduce((acc, int) => acc + int, 0);
+
   labelSumInterest.textContent = `${interest} €`;
 };
 
@@ -186,7 +187,8 @@ btnLogin.addEventListener('click', function (e) {
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
-  const receiverAcc = inputTransferTo;
+  const receiverAcc = inputTransferTo.value;
+  console.log(receiverAcc, amount);
 
   // validation
   // does the recipient exists?
