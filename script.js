@@ -110,13 +110,15 @@ createUserNames(accounts);
 
 /**
  * Calculate account balance, log it to the console, and display it on the page
+ *
+ * add new property - balance - to an account that function is being called upon
+ *
  * @param {Object} account  user's account, with movement, interestRate fields
  */
 const calcDisplayBalance = function (account) {
-  const accBalance = account.movements.reduce((acc, cur) => acc + cur, 0);
+  account.balance = account.movements.reduce((acc, cur) => acc + cur, 0);
   // console.log(`Account owner: ${account.owner} // Balance: ${accBalance}`);
-  labelBalance.textContent = `${accBalance} €`;
-  account.balance = accBalance;
+  labelBalance.textContent = `${account.balance} €`;
 };
 
 /**
