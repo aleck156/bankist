@@ -186,5 +186,9 @@ btnLogin.addEventListener('click', function (e) {
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
-  const to = inputTransferTo;
+  const receiverAcc = inputTransferTo;
+
+  // validation
+  // does the recipient exists?
+  // does the sender have enough deposits?
 });
