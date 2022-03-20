@@ -194,13 +194,17 @@ btnTransfer.addEventListener('click', function (e) {
   const receiverAcc = accounts.find(
     acc => acc.username === inputTransferTo.value
   );
-  console.log(receiverAcc, amount);
+  console.log(receiverAcc, `Amount: ${amount}`);
 
   if (
     amount > 0 && // transferring only positive amount of money
     amount <= currentAccount.balance && // can the sender afford to transfer that amount of money
     receiverAcc?.username !== currentAccount.username // disable sending money to the same acc
   ) {
+    console.log(`Transfer valid`);
+    console.log(
+      `Transferring ${amount} from ${currentAccount.username} to ${receiverAcc.username}`
+    );
   }
 
   // validation
