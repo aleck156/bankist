@@ -84,8 +84,6 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
-
 // using .forEach()
 // we do not want to create new array
 // the goal is to modify the original source of data
@@ -122,8 +120,6 @@ const calcDisplayBalance = function (account) {
   labelBalance.textContent = `${accBalance} €`;
 };
 
-calcDisplayBalance(account1);
-
 /**
  * Update values of IN, OUT and INTEREST you see on the main page based on user's movements
  *
@@ -154,8 +150,6 @@ const calcDisplaySummary = function (movements, interestRate = 1.2) {
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest} €`;
 };
-
-calcDisplaySummary(account1.movements);
 
 // EVENT HANDLERS
 // this button is attached to a form, so the default action for html page is to reload it
