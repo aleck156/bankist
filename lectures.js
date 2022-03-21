@@ -243,3 +243,27 @@ const deposit = mov => mov > 0;
 console.log(movements.some(deposit));
 console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
+
+/////////////////////////////////////////////////
+// 162. flat and flatMap
+// converts nested arrays into a single array
+// goes only one level into nesting with default values
+// returns new array
+
+const arrL = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrL.flat(3));
+
+const accountMovements = accounts
+  .map(acc => acc.movements)
+  .flat(7)
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(accountMovements);
+
+// .flatMap()
+// combines .map() + .flat()
+// improved performance
+// it goes only one leel deep
+const accountMovements2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(accountMovements2);
