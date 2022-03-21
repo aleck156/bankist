@@ -226,12 +226,11 @@ btnTransfer.addEventListener('click', function (e) {
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
   const confirmPin = Number(inputClosePin.value);
-  const closingAcc = inputCloseUsername.value;
+  const closingAccNumber = inputCloseUsername.value;
 
   if (
-    currentAccount.username === closingAcc &&
+    currentAccount.username === closingAccNumber &&
     currentAccount.pin === confirmPin
   ) {
-    console.log(`All credentials good`);
   }
 });
