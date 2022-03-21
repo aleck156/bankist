@@ -256,4 +256,9 @@ btnClose.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
   const loanAmount = Number(inputLoanAmount.value);
+  const minDepositRequired = loanAmount * 0.1;
+
+  if (loanAmount > 0 && currentAccount.movements.some(minDepositRequired)) {
+    console.log(`You've qualified for the loan of ${loanAmount}`);
+  }
 });
