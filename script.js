@@ -235,8 +235,15 @@ btnClose.addEventListener('click', function (e) {
     const accIndex = accounts.findIndex(
       acc => acc.username === closingAccUsername
     );
+
+    // delete account
     accIndex >= 0
       ? accounts.splice(accIndex, 1)
       : console.log('index not found?!');
+
+    // hide UI
+    containerApp.style.opacity = 0;
+
+    // log out
   }
 });
