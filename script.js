@@ -67,11 +67,16 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /**
  * Display all of user's movements on the left user panel
  * @param {Array} movement an array of all user's operations (moves)
+ * @param {Boolean} sort  should the movements array be sorted?
  */
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
-  movements.forEach((mov, i) => {
+  // creating a copy of movements, using .slice() method
+  // [...movements] - would this work too?
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach((mov, i) => {
     // console.log(mov, i);
     const movType = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `
@@ -155,10 +160,11 @@ const calcDisplaySummary = function (account) {
 /**
  * display movements, balance and summary for a given account
  * @param {Object} acc user account
+ * @param {Boolean} sort  should the movements array be sorted?
  */
-const updateUI = function (acc) {
+const updateUI = function (acc, sort) {
   // display movements
-  displayMovements(acc.movements);
+  displayMovements(acc.movements, sort);
   // display balance
   calcDisplayBalance(acc);
   // display summary
