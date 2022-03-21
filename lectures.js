@@ -232,3 +232,14 @@ console.log(movements.includes(-130)); // tests only for equality
 
 // at least one element must meet the condition
 console.log(movements.some(mov => mov > 1500));
+
+// .every()
+// every element has to pass the test in order to get a true value
+console.log(account4.movements.every(elem => elem > 0));
+
+// separate callback
+const deposit = mov => mov > 0;
+
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
