@@ -226,4 +226,9 @@ const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 
 /////////////////////////////////////////////////
-// 160. The findIndex Method
+// 161. some and every
+console.log(movements);
+console.log(movements.includes(-130)); // tests only for equality
+
+// at least one element must meet the condition
+console.log(movements.some(mov => mov > 1500));
