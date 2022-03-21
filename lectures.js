@@ -283,3 +283,37 @@ console.log(owners);
 console.log(movements);
 console.log(movements.sort((a, b) => a - b));
 console.log(movements);
+
+/////////////////////////////////////////////////
+// 164. More Ways of Creating and Filling Arrays
+
+// .fill()
+// applioed to arrays created with new Array().fill()
+// can be applied to non-empty arrays too
+const x = new Array(7).fill(0);
+console.log(x);
+
+// .from()
+// we're not using it on an object, but on Array constructor!
+// passing an object and a callback function that will be called for each newly created elemnts
+// creating arrays from array-like, iterable structures and objects was the primary reason for creating this method
+const testingArrs = Array.from({ length: 7 }, (v, k) => 1);
+console.log(testingArrs);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+// generating an array of 100 random dice rolls
+const randArr = Array.from({ length: 100 }, () =>
+  Math.floor(Math.random() * 100 + 1)
+);
+
+console.log(randArr);
+
+// .querySelectorAll()
+// returns a NodeList
+// it's not a real array, so it doesn't have any of the useful Array methods
+// wrapping everything inside Array.from() returns an array, with all teh goodies!
+
+const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+console.log(movementsUI);
