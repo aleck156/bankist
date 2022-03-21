@@ -252,3 +252,8 @@ btnClose.addEventListener('click', function (e) {
     inputClosePin.value = inputCloseUsername.value = '';
   }
 });
+
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log(`lending`);
+});
