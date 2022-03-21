@@ -268,4 +268,6 @@ btnLoan.addEventListener('click', function (e) {
   } else {
     console.log(`You haven't met the requirements`);
   }
+
+  inputLoanAmount.value = '';
 });
