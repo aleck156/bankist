@@ -255,5 +255,5 @@ btnClose.addEventListener('click', function (e) {
 
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
-  console.log(`lending`);
+  const loanAmount = Number(inputLoanAmount.value);
 });
