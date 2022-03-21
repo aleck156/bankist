@@ -338,3 +338,64 @@ console.log(Math.floor(-23.3));
 // - transform it into Number object, do the methods, then convert it back
 console.log((2.7).toFixed(3));
 console.log((2.345).toFixed(3));
+
+/////////////////////////////////////////////////
+// 172. The Remainder Operator
+console.log(5 % 2);
+
+console.log(6 % 2);
+
+const isEven = num => num % 2 === 0;
+console.log(isEven(7));
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    if (i % 2 === 0) {
+      row.style.backgroundColor = 'orangered';
+    }
+    if (i % 3 === 0) {
+      row.style.backgroundColor = 'blue';
+    }
+  });
+});
+
+/////////////////////////////////////////////////
+// 173. Numeric Separators
+
+// useful for reading large numbers
+// can be placed only between two digits
+// not allowed between a digit and a dot, at the beginning or end of a number
+const diameter = 287_460_000_000;
+console.log(diameter);
+
+const priceCents = 345_99;
+console.log(priceCents);
+
+const transferFee1 = 15_00;
+const transferFee2 = 1_500;
+
+const PI = 3.14_1592; // OK
+// const PI2 = 3._141592; // NOT OK
+
+// converting strings with underscores into numbers DO NOT WORK
+const testValue = '123_456';
+console.log(Number.parseInt(testValue));
+
+/////////////////////////////////////////////////
+// 174. Working with BigInt
+// internally numbers are stored as 64-bits
+// only 53 are used to store the digit
+// the rest is used for storing sign and position of the decimal point
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+// solution to this limitation was introducing BigInt
+console.log(124214553452352345234635n * 1252345245234n);
+
+// NOTE: you cannot mix numbers and BigInt
+// nor should you even try
+
+// BigInt is easily converted into strings, so concatenating goes smoothly
+
+/////////////////////////////////////////////////
+// 175. Creating Dates
