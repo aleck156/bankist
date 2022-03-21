@@ -160,7 +160,6 @@ const calcDisplaySummary = function (account) {
 /**
  * display movements, balance and summary for a given account
  * @param {Object} acc user account
- * @param {Boolean} sort  should the movements array be sorted?
  */
 const updateUI = function (acc) {
   // display movements
