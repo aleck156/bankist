@@ -19,25 +19,23 @@ console.log(dogs);
 
 // 2.
 console.log(`--- #2 ---`);
-dogs.forEach(dog => {
-  dog.owners.findIndex(owner => owner === 'Sarah') >= 0 ? console.log(dog) : '';
-});
+
+const okayConditions = dog =>
+  dog.curFood > dog.recommendedFood * 0.9 &&
+  dog.curFood < dog.recommendedFood * 1.1;
+
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(
+  `Does Sarah's dog eat ok? ${okayConditions(dogSarah) ? 'Yes!' : 'No!'}`
+);
 
 // 3.
-const ownersEatTooMuch = [];
-const ownersEatTooLittle = [];
-dogs.forEach(dog => {
-  if (dog.curFood > dog.recommendedFood * 1.1) {
-    ownersEatTooMuch.push(dog);
-    return;
-  }
-  if (dog.curFood < dog.recommendedFood * 0.9) {
-    ownersEatTooLittle.push(dog);
-    return;
-  }
-});
-
 console.log(`--- #3 ---`);
+const ownersEatTooMuch = dogs.filter(dog => dog.curFood > dog.recommendedFood);
+
+const ownersEatTooLittle = dogs.filter(
+  dog => dog.curFood < dog.recommendedFood
+);
 
 console.log(`Too much food: `);
 console.log(ownersEatTooMuch);
@@ -63,9 +61,6 @@ console.log(exactAmount.length > 0);
 
 // 6.
 console.log(`--- #6 ---`);
-const okayConditions = dog =>
-  dog.curFood > dog.recommendedFood * 0.9 &&
-  dog.curFood < dog.recommendedFood * 1.1;
 
 const okayAmount = dogs.some(okayConditions);
 console.log(okayAmount);
