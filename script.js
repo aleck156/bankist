@@ -228,6 +228,9 @@ btnClose.addEventListener('click', function (e) {
   const confirmPin = Number(inputClosePin.value);
   const closingAccUsername = inputCloseUsername.value;
 
+  inputClosePin.value = '';
+  inputCloseUsername.value = '';
+
   if (
     currentAccount.username === closingAccUsername &&
     currentAccount.pin === confirmPin
