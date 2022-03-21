@@ -263,6 +263,8 @@ btnLoan.addEventListener('click', function (e) {
     currentAccount.movements.some(mov => mov >= minDepositRequired)
   ) {
     console.log(`You've qualified for the loan of ${loanAmount}`);
+    currentAccount.movements.push(loanAmount);
+    updateUI(currentAccount);
   } else {
     console.log(`You haven't met the requirements`);
   }
