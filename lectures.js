@@ -267,3 +267,19 @@ const accountMovements2 = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, cur) => acc + cur, 0);
 console.log(accountMovements2);
+
+/////////////////////////////////////////////////
+// 163. Sorting Arrays
+
+// in place!
+// it mutates the original array - be careful!
+// .sort() - converts everything to strings, and only then it sorts it out
+// specify callback function to make it work as you want
+
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+console.log(owners);
+
+console.log(movements);
+console.log(movements.sort((a, b) => a - b));
+console.log(movements);
