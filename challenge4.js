@@ -46,15 +46,8 @@ console.log(ownersEatTooLittle);
 
 // 4.
 console.log(`--- #4 ---`);
-
-const tooMuchOwners = Array.from(ownersEatTooMuch, dog => dog.owners).flat();
-console.log(`${tooMuchOwners.join(' and ')}'s dogs eat too much!`);
-
-const tooLittleOwners = Array.from(
-  ownersEatTooLittle,
-  dog => dog.owners
-).flat();
-console.log(`${tooLittleOwners.join(' and ')}'s dogs eat too little!`);
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
 
 // 5.
 console.log(`--- #5 ---`);
