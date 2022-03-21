@@ -162,9 +162,9 @@ const calcDisplaySummary = function (account) {
  * @param {Object} acc user account
  * @param {Boolean} sort  should the movements array be sorted?
  */
-const updateUI = function (acc, sort) {
+const updateUI = function (acc) {
   // display movements
-  displayMovements(acc.movements, sort);
+  displayMovements(acc.movements);
   // display balance
   calcDisplayBalance(acc);
   // display summary
@@ -280,5 +280,5 @@ btnLoan.addEventListener('click', function (e) {
 
 // this is not a form, so no need to prevent default page reload on click
 btnSort.addEventListener('click', function (e) {
-  updateUI(currentAccount, true);
+  displayMovements(currentAccount.movements, true);
 });
