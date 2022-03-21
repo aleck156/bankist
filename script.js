@@ -62,6 +62,7 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
+/////////////////////////////////////////////////
 
 /**
  * Display all of user's movements on the left user panel
@@ -164,6 +165,7 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+/////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // EVENT HANDLERS
 // this button is attached to a form, so the default action for html page is to reload it
