@@ -31,11 +31,13 @@ console.log(
 
 // 3.
 console.log(`--- #3 ---`);
-const ownersEatTooMuch = dogs.filter(dog => dog.curFood > dog.recommendedFood);
+const ownersEatTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recommendedFood)
+  .flatMap(dog => dog.owners);
 
-const ownersEatTooLittle = dogs.filter(
-  dog => dog.curFood < dog.recommendedFood
-);
+const ownersEatTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recommendedFood)
+  .flatMap(dog => dog.owners);
 
 console.log(`Too much food: `);
 console.log(ownersEatTooMuch);
