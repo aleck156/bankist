@@ -11,7 +11,7 @@ console.log(`--- initial data ---`);
 console.log(dogs);
 // 1.
 dogs.forEach(dog => {
-  dog.recommendedFood = Math.round(dog.weight ** 0.75 * 28);
+  dog.recFood = Math.round(dog.weight ** 0.75 * 28);
 });
 
 console.log(`--- #1 ---`);
@@ -21,8 +21,7 @@ console.log(dogs);
 console.log(`--- #2 ---`);
 
 const okayConditions = dog =>
-  dog.curFood > dog.recommendedFood * 0.9 &&
-  dog.curFood < dog.recommendedFood * 1.1;
+  dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
 
 const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
 console.log(
@@ -32,11 +31,11 @@ console.log(
 // 3.
 console.log(`--- #3 ---`);
 const ownersEatTooMuch = dogs
-  .filter(dog => dog.curFood > dog.recommendedFood)
+  .filter(dog => dog.curFood > dog.recFood)
   .flatMap(dog => dog.owners);
 
 const ownersEatTooLittle = dogs
-  .filter(dog => dog.curFood < dog.recommendedFood)
+  .filter(dog => dog.curFood < dog.recFood)
   .flatMap(dog => dog.owners);
 
 console.log(`Too much food: `);
@@ -51,7 +50,7 @@ console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
 
 // 5.
 console.log(`--- #5 ---`);
-const exactAmount = dogs.some(dog => dog.curFood === dog.recommendedFood);
+const exactAmount = dogs.some(dog => dog.curFood === dog.recFood);
 console.log(exactAmount);
 
 // 6.
@@ -70,5 +69,5 @@ console.log(`--- #8 ---`);
 
 const shallowCopy = dogs
   .slice()
-  .sort((dogA, dogB) => dogA.recommendedFood - dogB.recommendedFood);
+  .sort((dogA, dogB) => dogA.recFood - dogB.recFood);
 console.log(shallowCopy);
