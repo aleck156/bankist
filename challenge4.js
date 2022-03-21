@@ -51,8 +51,8 @@ console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
 
 // 5.
 console.log(`--- #5 ---`);
-const exactAmount = dogs.filter(dog => dog.curFood === dog.recommendedFood);
-console.log(exactAmount.length > 0);
+const exactAmount = dogs.some(dog => dog.curFood === dog.recommendedFood);
+console.log(exactAmount);
 
 // 6.
 console.log(`--- #6 ---`);
