@@ -282,4 +282,5 @@ let sorted = false;
 // this is not a form, so no need to prevent default page reload on click
 btnSort.addEventListener('click', function (e) {
   displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
