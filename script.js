@@ -226,11 +226,14 @@ btnTransfer.addEventListener('click', function (e) {
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
   const confirmPin = Number(inputClosePin.value);
-  const closingAccNumber = inputCloseUsername.value;
+  const closingAccUsername = inputCloseUsername.value;
 
   if (
-    currentAccount.username === closingAccNumber &&
+    currentAccount.username === closingAccUsername &&
     currentAccount.pin === confirmPin
   ) {
+    const accIndex = accounts.findIndex(function(acc, index, arr){
+      acc.username = 
+    });
   }
 });
