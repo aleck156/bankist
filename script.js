@@ -232,8 +232,11 @@ btnClose.addEventListener('click', function (e) {
     currentAccount.username === closingAccUsername &&
     currentAccount.pin === confirmPin
   ) {
-    const accIndex = accounts.findIndex(function(acc, index, arr){
-      acc.username = 
+    const accIndex = accounts.findIndex(function (acc, index, arr) {
+      return acc.username === closingAccUsername;
     });
+    accIndex >= 0
+      ? accounts.splice(accIndex, 1)
+      : console.log('index not found?!');
   }
 });
