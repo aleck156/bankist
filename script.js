@@ -228,9 +228,6 @@ btnClose.addEventListener('click', function (e) {
   const confirmPin = Number(inputClosePin.value);
   const closingAccUsername = inputCloseUsername.value;
 
-  inputClosePin.value = '';
-  inputCloseUsername.value = '';
-
   if (
     currentAccount.username === closingAccUsername &&
     currentAccount.pin === confirmPin
@@ -248,5 +245,8 @@ btnClose.addEventListener('click', function (e) {
     containerApp.style.opacity = 0;
 
     // log out
+
+    // resetting form fields
+    inputClosePin.value = inputCloseUsername.value = '';
   }
 });
