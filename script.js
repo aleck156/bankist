@@ -258,7 +258,12 @@ btnLoan.addEventListener('click', function (e) {
   const loanAmount = Number(inputLoanAmount.value);
   const minDepositRequired = loanAmount * 0.1;
 
-  if (loanAmount > 0 && currentAccount.movements.some(minDepositRequired)) {
+  if (
+    loanAmount > 0 &&
+    currentAccount.movements.some(mov => mov >= minDepositRequired)
+  ) {
     console.log(`You've qualified for the loan of ${loanAmount}`);
+  } else {
+    console.log(`You haven't met the requirements`);
   }
 });
