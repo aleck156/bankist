@@ -190,8 +190,8 @@ const startLogOutTimer = function () {
   const tick = function () {
     const minutes = String(Math.trunc(time / 60)).padStart(2, 0);
     const seconds = String(time % 60).padStart(2, 0);
-    // in each call, print the remaining time to the user interface
 
+    // in each call, print the remaining time to the user interface
     labelTimer.textContent = `${minutes}:${seconds}`;
 
     // when the time is 0:00, stop timer and log out user
@@ -204,10 +204,12 @@ const startLogOutTimer = function () {
     // decrease time by 1s
     time--;
   };
+
   // set the time to 5 minutes
   let time = 10;
 
   tick();
+
   // call the timer every 1 second
   // this callback function is executed only after one second has passed
   const timer = setInterval(tick, 1000);
