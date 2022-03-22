@@ -197,3 +197,10 @@ const now = new Date();
 console.log(new Intl.DateTimeFormat('ar-Sy').format(now));
 
 // console.log(`${day}/${month}/${year}, ${hour}:${min}`);
+
+/////////////////////////////////////////////////
+// 179. Internationalizing Numbers (Intl)
+const num = 3883764.23;
+console.log(`US:`.padEnd(15), new Intl.NumberFormat('en-US').format(num));
+console.log(`DE:`.padEnd(15), new Intl.NumberFormat('de-DE').format(num));
+console.log(`PL:`.padEnd(15), new Intl.NumberFormat('pl-PL').format(num));
