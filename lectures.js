@@ -229,7 +229,7 @@ console.log(
 
 // 2 kinds of timers
 // setTimeout - runs just once after
-// setintervals - runs indefinitely
+// setIntervals - runs indefinitely
 
 const ingredients = ['olives', 'spinach'];
 
@@ -244,3 +244,19 @@ console.log(`waiting ...`);
 if (ingredients.includes('spinach')) {
   clearTimeout(pizzaTimer);
 }
+
+// setInterval
+const stoppp = setInterval(function () {
+  const now = new Date();
+  const locale = navigator.locale;
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  };
+
+  const myTime = new Intl.DateTimeFormat(locale, options).format(now);
+  console.log(myTime);
+}, 1000);
+
+clearTimeout(stoppp);
