@@ -160,6 +160,9 @@ currentAccount = account1;
 updateUI(currentAccount);
 containerApp.style.opacity = 1;
 
+const now = new Date();
+labelDate.textContent = `${now.getDate()}/${now.getMonth()}/${now.getFullYear()}`;
+
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
