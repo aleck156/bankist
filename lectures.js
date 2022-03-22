@@ -153,7 +153,7 @@ const firstDate = new Date();
 console.log(firstDate);
 console.log(new Date('Mar 21 2022 16:37:48'));
 
-console.log(new Date(account1.movementsDates[0]));
+// console.log(new Date(account1.movementsDates[0]));
 
 console.log(new Date(2021, 1, 29, 13, 15, 21));
 
@@ -167,3 +167,21 @@ console.log(future.toISOString());
 
 // how to get a timestamp
 console.log(Date.now());
+
+/////////////////////////////////////////////////
+// 177. Operations With Dates
+
+// converting dates to numbers is an efficient way to do calculations
+
+console.log(Number(future));
+console.log(+future);
+
+const calcDaysPassed = (date1, date2) =>
+  Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+const days1 = calcDaysPassed(
+  new Date(2037, 3, 4),
+  new Date(2037, 3, 14, 10, 18)
+);
+console.log(days1);
+
+// for anything more advanced, you should use other libraries, like moment.js
