@@ -149,7 +149,11 @@ const calcDisplaySummary = function (acc) {
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${formatCurr(out, acc.locale, acc.currency)}`;
+  labelSumOut.textContent = `${formatCurr(
+    Math.abs(out),
+    acc.locale,
+    acc.currency
+  )}`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
