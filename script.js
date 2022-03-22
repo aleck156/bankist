@@ -213,11 +213,12 @@ const startLogOutTimer = function () {
   // call the timer every 1 second
   // this callback function is executed only after one second has passed
   const timer = setInterval(tick, 1000);
+  return timer;
 };
 
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 
 // FAKE ALWAYS LOGGED IN
 // currentAccount = account1;
@@ -266,7 +267,10 @@ btnLogin.addEventListener('click', function (e) {
     updateUI(currentAccount);
 
     // start logout timer
-    startLogOutTimer();
+    if (timer) {
+      clearInterval(timer);
+    }
+    timer = startLogOutTimer();
   }
 });
 
