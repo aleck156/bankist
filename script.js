@@ -184,8 +184,17 @@ updateUI(currentAccount);
 containerApp.style.opacity = 1;
 
 const now = new Date();
+const options = {
+  // numeric, 2-digit, long, narrow, short, weekday: 'long'
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  weekday: 'long',
+};
 
-console.log(new Intl.DateTimeFormat('ar-Sy').format(now));
+labelDate.textContent = new Intl.DateTimeFormat('en-US', options).format(now);
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
