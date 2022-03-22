@@ -161,7 +161,9 @@ updateUI(currentAccount);
 containerApp.style.opacity = 1;
 
 const now = new Date();
-labelDate.textContent = `${now.getDate()}/${now.getMonth()}/${now.getFullYear()}`;
+labelDate.textContent = `${now.getDate()}/${
+  now.getMonth() + 1
+}/${now.getFullYear()}`;
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
