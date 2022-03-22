@@ -223,3 +223,24 @@ console.log(
   `PL:`.padEnd(15),
   new Intl.NumberFormat('pl-PL', options).format(num)
 );
+
+/////////////////////////////////////////////////
+// 180. Timers: setTimeout and setInterval
+
+// 2 kinds of timers
+// setTimeout - runs just once after
+// setintervals - runs indefinitely
+
+const ingredients = ['olives', 'spinach'];
+
+const pizzaTimer = setTimeout(
+  (ing1, ing2) =>
+    console.log(`Here's your pizza ... with ${ing1} and ${ing2} `),
+  3000,
+  ...ingredients
+);
+console.log(`waiting ...`);
+
+if (ingredients.includes('spinach')) {
+  clearTimeout(pizzaTimer);
+}
