@@ -247,6 +247,9 @@ btnLogin.addEventListener('click', function (e) {
 
     // Update UI
     updateUI(currentAccount);
+
+    // start logout timer
+    startLogOutTimer();
   }
 });
 
