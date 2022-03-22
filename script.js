@@ -399,3 +399,21 @@ console.log(124214553452352345234635n * 1252345245234n);
 
 /////////////////////////////////////////////////
 // 175. Creating Dates
+const firstDate = new Date();
+console.log(firstDate);
+console.log(new Date('Mar 21 2022 16:37:48'));
+
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(2021, 1, 29, 13, 15, 21));
+
+// working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future.getFullYear());
+console.log(future.getMonth()); // it's ZERO-BASED
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.toISOString());
+
+// how to get a timestamp
+console.log(Date.now());
