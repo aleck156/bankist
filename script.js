@@ -161,11 +161,11 @@ updateUI(currentAccount);
 containerApp.style.opacity = 1;
 
 const now = new Date();
-const day = now.getDate();
-const month = now.getMonth() + 1;
+const day = `${now.getDate()}`.padStart(2, 0);
+const month = `${now.getMonth() + 1}`.padStart(2, 0);
 const year = now.getFullYear();
-const hour = now.getHours();
-const min = now.getMinutes();
+const hour = `${now.getHours()}`.padStart(2, 0);
+const min = `${now.getMinutes()}`.padStart(2, 0);
 
 labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
 
