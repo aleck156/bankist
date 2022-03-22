@@ -185,3 +185,15 @@ const days1 = calcDaysPassed(
 console.log(days1);
 
 // for anything more advanced, you should use other libraries, like moment.js
+
+/////////////////////////////////////////////////
+// 178. Internationalizing Dates (Intl)
+
+// ISO language table code
+
+// experimenting with API
+const now = new Date();
+
+console.log(new Intl.DateTimeFormat('ar-Sy').format(now));
+
+// console.log(`${day}/${month}/${year}, ${hour}:${min}`);

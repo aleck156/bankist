@@ -183,6 +183,10 @@ currentAccount = account1;
 updateUI(currentAccount);
 containerApp.style.opacity = 1;
 
+const now = new Date();
+
+console.log(new Intl.DateTimeFormat('ar-Sy').format(now));
+
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
