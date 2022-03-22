@@ -204,11 +204,10 @@ btnLogin.addEventListener('click', function (e) {
     const options = {
       // numeric, 2-digit, long, narrow, short, weekday: 'long'
       day: 'numeric',
-      month: 'long',
+      month: 'numeric',
       year: 'numeric',
       hour: 'numeric',
       minute: 'numeric',
-      weekday: 'long',
     };
 
     const locale = navigator.language;
