@@ -200,7 +200,26 @@ console.log(new Intl.DateTimeFormat('ar-Sy').format(now));
 
 /////////////////////////////////////////////////
 // 179. Internationalizing Numbers (Intl)
+
+// everything is in the docs
 const num = 3883764.23;
-console.log(`US:`.padEnd(15), new Intl.NumberFormat('en-US').format(num));
-console.log(`DE:`.padEnd(15), new Intl.NumberFormat('de-DE').format(num));
-console.log(`PL:`.padEnd(15), new Intl.NumberFormat('pl-PL').format(num));
+
+const options = {
+  style: 'currency', // other options: unit, percent, currency
+  unit: 'celsius',
+  currency: 'EUR',
+  useGrouping: true,
+};
+
+console.log(
+  `US:`.padEnd(15),
+  new Intl.NumberFormat('en-US', options).format(num)
+);
+console.log(
+  `DE:`.padEnd(15),
+  new Intl.NumberFormat('de-DE', options).format(num)
+);
+console.log(
+  `PL:`.padEnd(15),
+  new Intl.NumberFormat('pl-PL', options).format(num)
+);
