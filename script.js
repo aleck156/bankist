@@ -191,10 +191,15 @@ const startLogOutTimer = function () {
   let time = 100;
   // call the timer every 1 second
   setInterval(() => {
-    labelTimer.textContent = `${time}`;
+    const minutes = Math.trunc(time / 60);
+    const seconds = time % 60;
+    // in each call, print the remaining time to the user interface
+
+    labelTimer.textContent = `${minutes}:${seconds}`;
+
+    // decrease time by 1s
     time--;
   }, 1000);
-  // in each call, print the remaining time to the user interface
   // when the time is 0:00, stop timer and log out user
 };
 
