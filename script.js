@@ -298,6 +298,10 @@ btnTransfer.addEventListener('click', function (e) {
 
     // Update UI
     updateUI(currentAccount);
+
+    // restart timer
+    clearInterval(timer);
+    timer = startLogOutTimer();
   }
 });
 
@@ -319,6 +323,10 @@ btnLoan.addEventListener('click', function (e) {
     }, 2500);
   }
   inputLoanAmount.value = '';
+
+  // restart timer
+  clearInterval(timer);
+  timer = startLogOutTimer();
 });
 
 btnClose.addEventListener('click', function (e) {
@@ -349,4 +357,8 @@ btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   displayMovements(currentAccount, !sorted);
   sorted = !sorted;
+
+  // restart timer
+  clearInterval(timer);
+  timer = startLogOutTimer();
 });
