@@ -91,6 +91,10 @@ const formatMovementDate = function (date) {
 
   const daysPassed = calcDaysPassed(new Date(), date);
 
+  if (daysPassed === 0) return `today`;
+  if (daysPassed === 1) return `yesterday`;
+  if (daysPassed <= 7) return `${daysPassed} days ago`;
+
   return `${day}/${month}/${year}, ${daysPassed} days ago`;
 };
 
