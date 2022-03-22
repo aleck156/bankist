@@ -213,9 +213,10 @@ btnLogin.addEventListener('click', function (e) {
 
     const locale = navigator.language;
 
-    labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(
-      now
-    );
+    labelDate.textContent = new Intl.DateTimeFormat(
+      currentAccount.locale,
+      options
+    ).format(now);
 
     // const day = `${now.getDate()}`.padStart(2, 0);
     // const month = `${now.getMonth() + 1}`.padStart(2, 0);
