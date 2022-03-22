@@ -82,10 +82,6 @@ const inputClosePin = document.querySelector('.form__input--pin');
 // Functions
 
 const formatMovementDate = function (date, locale) {
-  // const day = `${date.getDate()}`.padStart(2, 0);
-  // const month = `${date.getMonth() + 1}`.padStart(2, 0);
-  // const year = date.getFullYear();
-
   const calcDaysPassed = (date1, date2) =>
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
@@ -95,7 +91,6 @@ const formatMovementDate = function (date, locale) {
   if (daysPassed === 1) return `yesterday`;
   if (daysPassed <= 7) return `${daysPassed} days ago`;
 
-  // return `${day}/${month}/${year}, ${daysPassed} days ago`;
   return new Intl.DateTimeFormat(locale).format(date);
 };
 
@@ -159,7 +154,6 @@ const calcDisplaySummary = function (acc) {
     .filter(mov => mov > 0)
     .map(deposit => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
-      // console.log(arr);
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
@@ -234,14 +228,6 @@ btnLogin.addEventListener('click', function (e) {
       currentAccount.locale,
       options
     ).format(now);
-
-    // const day = `${now.getDate()}`.padStart(2, 0);
-    // const month = `${now.getMonth() + 1}`.padStart(2, 0);
-    // const year = now.getFullYear();
-    // const hour = `${now.getHours()}`.padStart(2, 0);
-    // const min = `${now.getMinutes()}`.padStart(2, 0);
-
-    // labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
