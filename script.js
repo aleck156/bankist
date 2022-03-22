@@ -90,7 +90,6 @@ const formatMovementDate = function (date) {
     Math.trunc(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
 
   return `${day}/${month}/${year}, ${daysPassed} days ago`;
 };
