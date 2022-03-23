@@ -86,26 +86,30 @@ also, they taste so good ... :-) <button class="btn btn--close-cookie">Got it!</
 
 // this will attach only one message
 // message is alive, living inside a DOM
-header.prepend(message);
+header.append(message);
 
 // in order to attach the same object multiple times, you CLONE IT
-header.prepend(message.cloneNode(true));
-header.append(message.cloneNode(true));
+// header.prepend(message.cloneNode(true));
+// header.append(message.cloneNode(true));
 
 // appeding elements
 // .before() - attach before the element you're attaching it to
 // .after() - quite obvious, right?
-header.before(message.cloneNode(true));
-header.after(message.cloneNode(true));
+// header.before(message.cloneNode(true));
+// header.after(message.cloneNode(true));
 
 // before / prepend / append / after
-// document.querySelector('.btn--close-cookie').addEventListener('click', () => {
-//   message.remove();
-// });
+document.querySelector('.btn--close-cookie').addEventListener('click', () => {
+  message.remove();
+});
 
 // DOM traversing
+/*
 document.querySelectorAll('.btn--close-cookie').forEach(elem =>
   elem.addEventListener('click', () => {
     elem.parentElement.remove();
   })
 );
+*/
+// styles
+message.style.backgroundColor = '#37383d';

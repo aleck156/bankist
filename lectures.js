@@ -33,3 +33,6 @@ the root of all nodes
 
 we never manually create EventTarget node
 */
+
+/////////////////////////////////////////////////
+// 187. Styles, Attributes and Classes
