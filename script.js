@@ -111,5 +111,65 @@ document.querySelectorAll('.btn--close-cookie').forEach(elem =>
   })
 );
 */
+
+///////////////////////////////////////
+// 187. Styles, Attributes and Classes
+
 // styles
+// inline styles
 message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+// logging to console only works for style we've set manually, inline
+console.log(message.style.backgroundColor);
+
+// the way around it is to get an actual value from the browser
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+// type coercion is what messes it up
+/// parsing solves the issue
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// ATTRIBUTES
+const logo = document.querySelector('.nav__logo');
+console.log(logo.src);
+console.log(logo.alt);
+
+// only standard properties that are expected to be on that tag are available by default
+// everything else - custom made - has to be reinvented
+console.log(logo.designer);
+console.log(logo.className);
+
+// ... so, how to get a custom-defined attribute?
+console.log(logo.getAttribute('designer'));
+
+// we can get attributes, but can we set them too?
+logo.setAttribute('madeAt', 'hometown, georgia');
+console.log(logo.getAttribute('madeAt'));
+
+// the difference in accessing an attribute directly and via .getAttribute()
+// the first one gives a full url
+// the second one returns a relavite address
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+
+// the same is true for href attribute on links
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+// DATA ATTRIBUTES
+// special kind of attributes
+// starts with 'data' keyword
+console.log(logo.dataset.versionNumber);
+
+// setting up class names
+// be warned, thou, as it replaces everything that was set in this attribute!
+// allows only one class to be put there
+
+// logo.className = 'Thomass';
+console.log(logo.classList.toString());
