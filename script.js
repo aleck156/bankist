@@ -42,6 +42,12 @@ btnScrollTo.addEventListener('click', function (e) {
 ///////////////////////////////////////
 // PAGE NAVIGATION
 
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    console.log(`Link`);
+  });
+});
+
 ///////////////////////////////////////
 ///////////////////////////////////////
 
