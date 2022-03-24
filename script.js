@@ -44,6 +44,7 @@ btnScrollTo.addEventListener('click', function (e) {
 
 const smoothScroll = function (e) {
   e.preventDefault();
+  console.log(e.target);
 
   const currentID = this.getAttribute('href');
   document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
@@ -52,6 +53,15 @@ const smoothScroll = function (e) {
 document.querySelectorAll('.nav__link').forEach(function (el) {
   el.addEventListener('click', smoothScroll);
 });
+
+// EVENT DELEGATION
+
+// 1. ADD EVENT LISTENER TO THE COMMON PARENT ELEMENT
+// 2. DETERMINE WHAT ELEMENT ORIGINATED THE EVENT
+
+// this is an inefficient way of attaching smooth scrolling
+// we can attach it to the parent of them, which will capture the click and call this function
+// event.target - that's how we know the closest parent responsible for that event
 
 ///////////////////////////////////////
 ///////////////////////////////////////
