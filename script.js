@@ -8,6 +8,9 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -29,17 +32,18 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
-
 ///////////////////////////////////////
-///////////////////////////////////////
-
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-
-const section1 = document.querySelector('#section--1');
+// PAGE SCROLLING
 
 btnScrollTo.addEventListener('click', function (e) {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+///////////////////////////////////////
+// PAGE NAVIGATION
+
+///////////////////////////////////////
+///////////////////////////////////////
 
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
