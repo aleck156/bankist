@@ -42,14 +42,28 @@ btnScrollTo.addEventListener('click', function (e) {
 ///////////////////////////////////////
 // PAGE NAVIGATION
 
-// s
+// const smoothScroll = function (e) {
+//   e.preventDefault();
+//   console.log(e.target);
+
+//   const currentID = this.getAttribute('href');
+//   document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
+// };
+
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', smoothScroll);
+// });
 
 // EVENT DELEGATION
 
 // 1. ADD EVENT LISTENER TO THE COMMON PARENT ELEMENT
 // 2. DETERMINE WHAT ELEMENT ORIGINATED THE EVENT
 document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
   console.log(e.target.getAttribute('href'));
+
+  const currentID = e.target.getAttribute('href');
+  document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
 });
 
 // this is an inefficient way of attaching smooth scrolling
