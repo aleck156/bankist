@@ -50,7 +50,7 @@ document.querySelectorAll('.nav__link').forEach(function (el) {
 
 ///////////////////////////////////////
 ///////////////////////////////////////
-
+/*
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 const randomColor = () =>
@@ -81,3 +81,5 @@ document.querySelector('.nav').addEventListener(
   },
   true
 );
+
+*/
