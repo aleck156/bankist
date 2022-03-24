@@ -46,17 +46,28 @@ const randomInt = (min, max) =>
 const randomColor = () =>
   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 
+// e.currentTarget === this
+// elements keep listening to the events that happen on them, but also on their children
+// setting up third parameter of an event listener to true, it no longer listens to bubbling events, but capturing events
+// rarely used these days, only for historical reasons we have capturing and bubbling
 document.querySelector('.nav__link').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log(`Link`, e.target);
+  console.log(`Link`, e.target, e.currentTarget);
+
+  // how to stop propagation
+  e.stopPropagation();
 });
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
-  console.log(`Links`, e.target);
+  console.log(`Links`, e.target, e.currentTarget);
 });
 
-document.querySelector('.nav').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log(`Nav`, e.target);
-});
+document.querySelector('.nav').addEventListener(
+  'click',
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log(`Nav`, e.target, e.currentTargets);
+  },
+  true
+);
