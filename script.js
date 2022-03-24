@@ -64,7 +64,6 @@ btnScrollTo.addEventListener('click', function (e) {
 // 2. DETERMINE WHAT ELEMENT ORIGINATED THE EVENT
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
-  console.log(e.target.getAttribute('href'));
 
   if (e.target.classList.contains('nav__link')) {
     const currentID = e.target.getAttribute('href');
@@ -73,6 +72,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 });
 // instead of having an bunch of event listeners attached to every single element, now we operate with only one event listener
 // LESS MEMORY USAGE //
+// using event delegation allows for creating functionality for elements that are not yet created until the page loads fully
 
 ///////////////////////////////////////
 ///////////////////////////////////////
@@ -109,3 +109,10 @@ document.querySelector('.nav').addEventListener(
 );
 
 */
+
+// 193. DOM Traversing
+const h1 = document.querySelector('h1');
+console.log(h1.querySelectorAll('.highlight')[1]);
+console.log(h1.children); // only works for direct children
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'orangered';
