@@ -116,3 +116,34 @@ console.log(h1.querySelectorAll('.highlight')[1]);
 console.log(h1.children); // only works for direct children
 h1.firstElementChild.style.color = 'white';
 h1.lastElementChild.style.color = 'orangered';
+
+console.log(h1.parentNode);
+
+// when searching for the closest parent that meet the conditions ...
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+
+// going sideways, selecting siblings
+// we can access only direct siblings - previous and the next one following
+// when we need the elements ...
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+
+// when we need the nodes ...
+console.log(h1.previousSibling);
+console.log(h1.nextElementSibling);
+
+// in case we need all of siblings
+// we move up to the parent and grab all children
+console.log(h1.parentElement.children);
+// but this leaves us with HTMLColletion, which has none of ES6+ methods ...
+
+// so we convert it into an array
+[...h1.parentElement.children].forEach(function (el) {
+  // both ways work
+
+  // if (el.tagName != 'H1') el.style.color = 'green';
+  if (el !== h1) el.style.transform = 'scale(0.5)';
+});
+
+const siblingsArray = [...h1.parentElement.children];
+console.log(siblingsArray);
