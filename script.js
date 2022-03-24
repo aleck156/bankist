@@ -50,6 +50,10 @@ btnScrollTo.addEventListener('click', function (e) {
 //   document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
 // };
 
+// this is an inefficient way of attaching smooth scrolling
+// we can attach it to the parent of them, which will capture the click and call this function
+// event.target - that's how we know the closest parent responsible for that event
+
 // document.querySelectorAll('.nav__link').forEach(function (el) {
 //   el.addEventListener('click', smoothScroll);
 // });
@@ -65,10 +69,8 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   const currentID = e.target.getAttribute('href');
   document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
 });
-
-// this is an inefficient way of attaching smooth scrolling
-// we can attach it to the parent of them, which will capture the click and call this function
-// event.target - that's how we know the closest parent responsible for that event
+// instead of having an bunch of event listeners attached to every single element, now we operate with only one event listener
+// LESS MEMORY USAGE //
 
 ///////////////////////////////////////
 ///////////////////////////////////////
