@@ -66,8 +66,10 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
   console.log(e.target.getAttribute('href'));
 
-  const currentID = e.target.getAttribute('href');
-  document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
+  if (e.target.classList.contains('nav__link')) {
+    const currentID = e.target.getAttribute('href');
+    document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
+  }
 });
 // instead of having an bunch of event listeners attached to every single element, now we operate with only one event listener
 // LESS MEMORY USAGE //
