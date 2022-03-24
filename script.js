@@ -44,7 +44,10 @@ btnScrollTo.addEventListener('click', function (e) {
 
 document.querySelectorAll('.nav__link').forEach(function (el) {
   el.addEventListener('click', function (e) {
-    console.log(`Link`);
+    e.preventDefault();
+
+    const currentID = el.getAttribute('href');
+    document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
   });
 });
 
