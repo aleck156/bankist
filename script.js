@@ -42,13 +42,15 @@ btnScrollTo.addEventListener('click', function (e) {
 ///////////////////////////////////////
 // PAGE NAVIGATION
 
-document.querySelectorAll('.nav__link').forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    e.preventDefault();
+const smoothScroll = function (e) {
+  e.preventDefault();
 
-    const currentID = el.getAttribute('href');
-    document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
-  });
+  const currentID = this.getAttribute('href');
+  document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
+};
+
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', smoothScroll);
 });
 
 ///////////////////////////////////////
