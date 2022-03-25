@@ -50,3 +50,25 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     document.querySelector(currentID).scrollIntoView({ behavior: 'smooth' });
   }
 });
+
+///////////////////////////////////////
+// TAB NAVIGATION
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const operationsContent = document.querySelectorAll('.operations__content');
+
+tabsContainer.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (e.target.getAttribute('data-tab')) {
+    const dataTab = e.target.getAttribute('data-tab');
+    // console.log(`dataTab: ${dataTab}`);
+    operationsContent.forEach(function (elem) {
+      // console.log(elem);
+      if (elem.classList.contains(`operations__content--${dataTab}`)) {
+        elem.classList.add('operations__content--active');
+      } else {
+        elem.classList.remove('operations__content--active');
+      }
+    });
+  }
+});
