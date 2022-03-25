@@ -125,8 +125,39 @@ window.addEventListener('scroll', function (e) {
 
 // using interface
 
-const observerCallback = function () {};
+// const observerCallback = function (entries, observer) {
+//   // navBar.classList.add('sticky');
+//   entries.forEach(entry => {
+//     // console.log(entry);
+//   });
+// };
 
-const observerOptions = {};
+// const observerOptions = {
+//   root: null,
+//   threshold: [0, 0.2],
+// };
+// const observer = new IntersectionObserver(observerCallback, observerOptions);
+// observer.observe(section1);
+
+const header = document.querySelector('.header');
+const headerHeight = navBar.getBoundingClientRect().height;
+
+const observerCallback = function (entries) {
+  // entries[0]['target'].classList.add('sticky');
+  // console.log(entries[0]['target']);
+  const [entry] = entries;
+  if (!entry.isIntersecting) {
+    navBar.classList.add('sticky');
+  } else {
+    navBar.classList.remove('sticky');
+  }
+};
+
+const observerOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${headerHeight}px`,
+};
+
 const observer = new IntersectionObserver(observerCallback, observerOptions);
-observer.observe(section1);
+observer.observe(header);
