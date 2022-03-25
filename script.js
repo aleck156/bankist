@@ -59,16 +59,24 @@ const tabsContent = document.querySelectorAll('.operations__content');
 
 tabsContainer.addEventListener('click', function (e) {
   e.preventDefault();
-  if (e.target.getAttribute('data-tab')) {
-    const dataTab = e.target.getAttribute('data-tab');
-    // console.log(`dataTab: ${dataTab}`);
-    tabsContent.forEach(function (elem) {
-      // console.log(elem);
-      if (elem.classList.contains(`operations__content--${dataTab}`)) {
-        elem.classList.add('operations__content--active');
-      } else {
-        elem.classList.remove('operations__content--active');
-      }
-    });
-  }
+  const clicked = e.target.closest('.operations__tab');
+  const dataTab = clicked.getAttribute('data-tab');
+  console.log(dataTab);
+
+  // guard clause
+  if (!clicked) return;
+
+  // toggling tab active classs
+  tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+
+  // activate content area
+  console.log(clicked.getAttribute('data-tab'));
+  tabsContent.forEach(tab =>
+    tab.classList.remove('operations__content--active')
+  );
+
+  document
+    .querySelector(`.operations__content--${clicked.getAttribute('data-tab')}`)
+    .classList.add('operations__content--active');
 });
