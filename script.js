@@ -85,9 +85,6 @@ tabsContainer.addEventListener('click', function (e) {
 ///////////////////////////////////////
 // HOVERING OVER NAVBAR - MENU FADE ANIMATION
 
-console.log(navBar);
-console.log(navBar.children);
-
 const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
