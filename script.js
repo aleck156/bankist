@@ -131,4 +131,9 @@ const observer = new IntersectionObserver(observerCallback, observerOptions);
 observer.observe(header);
 
 ///////////////////////////////////////
-// STICKY NAVIGATION
+// SECTION REVEAL
+const revealSection = function () {};
+
+const revealOptions = {};
+
+const sectionObserver = new IntersectionObserver(revealSection, revealOptions);
