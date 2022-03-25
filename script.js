@@ -129,3 +129,6 @@ const observerOptions = {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 observer.observe(header);
+
+///////////////////////////////////////
+// STICKY NAVIGATION
