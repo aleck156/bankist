@@ -81,3 +81,14 @@ tabsContainer.addEventListener('click', function (e) {
     .querySelector(`.operations__content--${clicked.getAttribute('data-tab')}`)
     .classList.add('operations__content--active');
 });
+
+///////////////////////////////////////
+// HOVERING OVER NAVBAR - MENU FADE ANIMATION
+
+console.log(navBar);
+console.log(navBar.children);
+
+// mouseenter event type DOES NOT BUBBLE UP
+navBar.addEventListener('mouseover', function (e) {});
+
+navBar.addEventListener('mouseout', function (e) {});
