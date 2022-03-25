@@ -88,8 +88,7 @@ tabsContainer.addEventListener('click', function (e) {
 console.log(navBar);
 console.log(navBar.children);
 
-// mouseenter event type DOES NOT BUBBLE UP
-navBar.addEventListener('mouseover', function (e) {
+const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
@@ -97,17 +96,18 @@ navBar.addEventListener('mouseover', function (e) {
 
     siblings.forEach(s => {
       if (s !== link) {
-        s.style.opacity = 0.5;
+        s.style.opacity = this;
       }
     });
-    logo.style.opacity = 0.5;
+    logo.style.opacity = this;
   }
-});
+};
 
-navBar.addEventListener('mouseout', function (e) {
-  const link = e.target;
-  const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-  const logo = link.closest('.nav').querySelector('img');
-  siblings.forEach(s => (s.style.opacity = 1));
-  logo.style.opacity = 1;
-});
+// mouseenter event type DOES NOT BUBBLE UP
+// passing an argument into handler
+navBar.addEventListener('mouseover', handleHover.bind(0.5));
+
+navBar.addEventListener('mouseout', handleHover.bind(1));
+
+///////////////////////////////////////
+// STICKY NAVIGATION
