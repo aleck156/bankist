@@ -143,5 +143,6 @@ const revealOptions = {
 const sectionObserver = new IntersectionObserver(revealSection, revealOptions);
 
 allSections.forEach(function (section) {
+  section.classList.add('section--hidden');
   sectionObserver.observe(section);
 });
