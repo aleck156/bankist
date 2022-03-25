@@ -322,3 +322,33 @@ console.log(h1.parentElement.children);
 
 const siblingsArray = [...h1.parentElement.children];
 console.log(siblingsArray);
+
+// scrol event attached to window object is not efficient, and should be avoided
+/*
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords.top);
+
+window.addEventListener('scroll', function (e) {
+  if (this.window.scrollY > initialCoords.top) {
+    navBar.classList.add('sticky');
+  } else {
+    navBar.classList.remove('sticky');
+  }
+});
+*/
+
+// using interface
+
+// const observerCallback = function (entries, observer) {
+//   // navBar.classList.add('sticky');
+//   entries.forEach(entry => {
+//     // console.log(entry);
+//   });
+// };
+
+// const observerOptions = {
+//   root: null,
+//   threshold: [0, 0.2],
+// };
+// const observer = new IntersectionObserver(observerCallback, observerOptions);
+// observer.observe(section1);
