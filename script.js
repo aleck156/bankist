@@ -108,3 +108,15 @@ navBar.addEventListener('mouseout', handleHover.bind(1));
 
 ///////////////////////////////////////
 // STICKY NAVIGATION
+
+// scrol event attached to window object is not efficient, and should be avoided
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords.top);
+
+window.addEventListener('scroll', function (e) {
+  if (this.window.scrollY > initialCoords.top) {
+    navBar.classList.add('sticky');
+  } else {
+    navBar.classList.remove('sticky');
+  }
+});
