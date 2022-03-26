@@ -236,15 +236,18 @@ const goToSlide = function (slide) {
 };
 
 goToSlide(0);
+activateDot(0);
 
 const nextSlide = function () {
   currentSlide === maxSlide - 1 ? (currentSlide = 0) : currentSlide++;
   goToSlide(currentSlide);
+  activateDot(slide);
 };
 
 const prevSlide = function () {
   currentSlide === 0 ? (currentSlide = maxSlide - 1) : currentSlide--;
   goToSlide(currentSlide);
+  activateDot(slide);
 };
 
 btnSlideRight.addEventListener('click', nextSlide);
@@ -267,5 +270,6 @@ dotContainer.addEventListener('click', function (e) {
     const { slide } = e.target.dataset;
     currentSlide = slide;
     goToSlide(slide);
+    activateDot(slide);
   }
 });
