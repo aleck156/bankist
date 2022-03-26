@@ -200,7 +200,7 @@ let currentSlide = 0;
 const maxSlide = slides.length;
 
 const slider = document.querySelector('.slider');
-slider.style.transform = `scale(0.5)`;
+// slider.style.transform = `scale(0.5)`;
 // slider.style.overflow = 'visible';
 // console.log(slides);
 // console.log(btnSlideLeft);
