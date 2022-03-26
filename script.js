@@ -267,7 +267,7 @@ document.addEventListener('keydown', function (e) {
 dotContainer.addEventListener('click', function (e) {
   if (e.target.classList.contains('dots__dot')) {
     // all of the custom attributes are in a dataset,
-    const { slide } = e.target.dataset;
+    const slide = Number(e.target.dataset.slide);
     currentSlide = slide;
     goToSlide(slide);
     activateDot(slide);
