@@ -250,3 +250,7 @@ document.addEventListener('keydown', function (e) {
     nextSlide();
   }
 });
+
+dotContainer.addEventListener('click', function (e) {
+  console.log(e.target);
+});
