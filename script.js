@@ -160,7 +160,7 @@ allSections.forEach(function (section) {
 ///////////////////////////////////////
 // LAZY LOADING
 
-const allImages = document.querySelectorAll('img');
+const allImages = document.querySelectorAll('img[data-src]');
 console.log(allImages);
 
 const revealImage = function (entries, observer) {
