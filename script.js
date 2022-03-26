@@ -196,6 +196,8 @@ const btnSlideLeft = document.querySelector('.slider__btn--left');
 const btnSlideRight = document.querySelector('.slider__btn--right');
 const sliderDots = document.querySelector('.dots');
 
+let currentSlide = 0;
+
 const slider = document.querySelector('.slider');
 slider.style.transform = `scale(0.5) translateX(-800px)`;
 slider.style.overflow = 'visible';
@@ -207,4 +209,11 @@ slider.style.overflow = 'visible';
 slides.forEach((s, i) => {
   // console.log(i, s);
   s.style.transform = `translateX(${100 * i}%)`;
+});
+
+btnSlideRight.addEventListener('click', function () {
+  currentSlide++;
+  slides.forEach((s, i) => {
+    s.style.transform = `translateX(${100 * (i - currentSlide)})`;
+  });
 });
