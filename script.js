@@ -233,4 +233,9 @@ document.addEventListener('keydown', function (e) {
   // conditions for switching left/right testimonials
   // section 3 has to be in the view
   // key pressed has to be either left or right
+  if (e.key === 'ArrowLeft') {
+    prevSlide();
+  } else if (e.key == 'ArrowRight') {
+    nextSlide();
+  }
 });
