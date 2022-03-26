@@ -169,7 +169,7 @@ const revealImage = function (entries, observer) {
   image.target.setAttribute('src', image.target.getAttribute('data-src'));
   image.target.classList.remove('lazy-img');
 
-  imgObserver.unobserve(image.target);
+  observer.unobserve(image.target);
 };
 
 const revealImgOptions = {
