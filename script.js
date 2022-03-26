@@ -187,3 +187,16 @@ const imgObserver = new IntersectionObserver(revealImage, revealImgOptions);
 allImages.forEach(img => {
   imgObserver.observe(img);
 });
+
+///////////////////////////////////////
+// SLIDER COMPONENT
+
+const slides = document.querySelectorAll('.slide');
+const btnSlideLeft = document.querySelector('.slider__btn--left');
+const btnSlideRight = document.querySelector('.slider__btn--right');
+const sliderDots = document.querySelector('.dots');
+
+console.log(slides);
+console.log(btnSlideLeft);
+console.log(btnSlideRight);
+console.log(sliderDots);
