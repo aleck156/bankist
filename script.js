@@ -179,7 +179,8 @@ const revealImage = function (entries, observer) {
 
 const revealImgOptions = {
   root: null,
-  threshold: 0.5,
+  threshold: 0,
+  rootMargin: '200px',
 };
 
 const imgObserver = new IntersectionObserver(revealImage, revealImgOptions);
