@@ -167,8 +167,12 @@ const revealImage = function (entries, observer) {
   const [image] = entries;
 
   if (!image.isIntersecting) return;
+
   image.target.setAttribute('src', image.target.getAttribute('data-src'));
-  image.target.classList.remove('lazy-img');
+
+  image.target.addEventListener('load', function () {
+    image.target.classList.remove('lazy-img');
+  });
 
   observer.unobserve(image.target);
 };
