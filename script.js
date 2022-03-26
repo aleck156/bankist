@@ -136,7 +136,7 @@ const allSections = document.querySelectorAll('.section');
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
 
   // adding guard
   if (!entry.isIntersecting) return;
@@ -166,6 +166,7 @@ console.log(allImages);
 const revealImage = function (entries, observer) {
   const [image] = entries;
 
+  if (!image.isIntersecting) return;
   image.target.setAttribute('src', image.target.getAttribute('data-src'));
   image.target.classList.remove('lazy-img');
 
