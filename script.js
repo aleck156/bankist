@@ -252,5 +252,8 @@ document.addEventListener('keydown', function (e) {
 });
 
 dotContainer.addEventListener('click', function (e) {
-  console.log(e.target);
+  if (e.target.classList.contains('dots__dot')) {
+    // all of the custom attributes are in a dataset,
+    const { slide } = e.target.dataset;
+  }
 });
