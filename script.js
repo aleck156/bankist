@@ -197,23 +197,34 @@ const btnSlideRight = document.querySelector('.slider__btn--right');
 const sliderDots = document.querySelector('.dots');
 
 let currentSlide = 0;
+const maxSlide = slides.length;
 
 const slider = document.querySelector('.slider');
-slider.style.transform = `scale(0.5) translateX(-800px)`;
-slider.style.overflow = 'visible';
+slider.style.transform = `scale(0.5)`;
+// slider.style.overflow = 'visible';
 // console.log(slides);
 // console.log(btnSlideLeft);
 // console.log(btnSlideRight);
 // console.log(sliderDots);
 
-slides.forEach((s, i) => {
-  // console.log(i, s);
-  s.style.transform = `translateX(${100 * i}%)`;
-});
-
-btnSlideRight.addEventListener('click', function () {
-  currentSlide++;
+const goToSlide = function (slide) {
   slides.forEach((s, i) => {
-    s.style.transform = `translateX(${100 * (i - currentSlide)})`;
+    s.style.transform = `translateX(${100 * (i - slide)}%)`;
   });
-});
+  console.log(currentSlide);
+};
+
+goToSlide(0);
+
+const nextSlide = function () {
+  currentSlide === maxSlide - 1 ? (currentSlide = 0) : currentSlide++;
+  goToSlide(currentSlide);
+};
+
+const prevSlide = function () {
+  currentSlide === 0 ? (currentSlide = maxSlide - 1) : currentSlide--;
+  goToSlide(currentSlide);
+};
+
+btnSlideRight.addEventListener('click', nextSlide);
+btnSlideLeft.addEventListener('click', prevSlide);
