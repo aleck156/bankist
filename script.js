@@ -200,12 +200,6 @@ let currentSlide = 0;
 const maxSlide = slides.length;
 
 const slider = document.querySelector('.slider');
-// slider.style.transform = `scale(0.5)`;
-// slider.style.overflow = 'visible';
-// console.log(slides);
-// console.log(btnSlideLeft);
-// console.log(btnSlideRight);
-// console.log(dotContainer);
 
 const createDots = function () {
   slides.forEach((_, i) => {
@@ -215,8 +209,6 @@ const createDots = function () {
     );
   });
 };
-
-createDots();
 
 const activateDot = function (slide) {
   document.querySelectorAll('.dots__dot').forEach(dot => {
@@ -232,11 +224,7 @@ const goToSlide = function (slide) {
   slides.forEach((s, i) => {
     s.style.transform = `translateX(${100 * (i - slide)}%)`;
   });
-  console.log(currentSlide);
 };
-
-goToSlide(0);
-activateDot(0);
 
 const nextSlide = function () {
   currentSlide === maxSlide - 1 ? (currentSlide = 0) : currentSlide++;
@@ -249,6 +237,14 @@ const prevSlide = function () {
   goToSlide(currentSlide);
   activateDot(currentSlide);
 };
+
+const init = function () {
+  createDots();
+  goToSlide(0);
+  activateDot(0);
+};
+
+init();
 
 btnSlideRight.addEventListener('click', nextSlide);
 btnSlideLeft.addEventListener('click', prevSlide);
