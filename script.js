@@ -219,7 +219,7 @@ const createDots = function () {
 createDots();
 
 const activateDot = function (slide) {
-  document.querySelectorAll('dots__dot').forEach(dot => {
+  document.querySelectorAll('.dots__dot').forEach(dot => {
     dot.classList.remove('dots__dot--active');
   });
 
