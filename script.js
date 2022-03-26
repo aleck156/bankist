@@ -166,8 +166,7 @@ console.log(allImages);
 const revealImage = function (entries, observer) {
   const [image] = entries;
 
-  if (image.target.hasAttribute('data-src'))
-    image.target.setAttribute('src', image.target.getAttribute('data-src'));
+  image.target.setAttribute('src', image.target.getAttribute('data-src'));
   image.target.classList.remove('lazy-img');
 
   imgObserver.unobserve(image.target);
