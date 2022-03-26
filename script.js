@@ -255,5 +255,7 @@ dotContainer.addEventListener('click', function (e) {
   if (e.target.classList.contains('dots__dot')) {
     // all of the custom attributes are in a dataset,
     const { slide } = e.target.dataset;
+    currentSlide = slide;
+    goToSlide(slide);
   }
 });
