@@ -197,6 +197,7 @@ const btnSlideRight = document.querySelector('.slider__btn--right');
 const sliderDots = document.querySelector('.dots');
 
 const slider = document.querySelector('.slider');
+slider.style.transform = `scale(0.5)`;
 
 // console.log(slides);
 // console.log(btnSlideLeft);
