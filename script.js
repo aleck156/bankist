@@ -194,7 +194,7 @@ allImages.forEach(img => {
 const slides = document.querySelectorAll('.slide');
 const btnSlideLeft = document.querySelector('.slider__btn--left');
 const btnSlideRight = document.querySelector('.slider__btn--right');
-const sliderDots = document.querySelector('.dots');
+const dotContainer = document.querySelector('.dots');
 
 let currentSlide = 0;
 const maxSlide = slides.length;
@@ -205,7 +205,7 @@ slider.style.transform = `scale(0.5)`;
 // console.log(slides);
 // console.log(btnSlideLeft);
 // console.log(btnSlideRight);
-// console.log(sliderDots);
+// console.log(dotContainer);
 
 const goToSlide = function (slide) {
   slides.forEach((s, i) => {
