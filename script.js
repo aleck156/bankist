@@ -241,13 +241,13 @@ activateDot(0);
 const nextSlide = function () {
   currentSlide === maxSlide - 1 ? (currentSlide = 0) : currentSlide++;
   goToSlide(currentSlide);
-  activateDot(slide);
+  activateDot(currentSlide);
 };
 
 const prevSlide = function () {
   currentSlide === 0 ? (currentSlide = maxSlide - 1) : currentSlide--;
   goToSlide(currentSlide);
-  activateDot(slide);
+  activateDot(currentSlide);
 };
 
 btnSlideRight.addEventListener('click', nextSlide);
