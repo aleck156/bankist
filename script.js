@@ -196,7 +196,12 @@ const btnSlideLeft = document.querySelector('.slider__btn--left');
 const btnSlideRight = document.querySelector('.slider__btn--right');
 const sliderDots = document.querySelector('.dots');
 
-console.log(slides);
-console.log(btnSlideLeft);
-console.log(btnSlideRight);
-console.log(sliderDots);
+// console.log(slides);
+// console.log(btnSlideLeft);
+// console.log(btnSlideRight);
+// console.log(sliderDots);
+
+slides.forEach((s, i) => {
+  // console.log(i, s);
+  s.style.transform = `translateX(${100 * i}%)`;
+});
