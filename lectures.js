@@ -366,11 +366,13 @@ scripts are fetched asynchronously and executed immediately, while the HTML is s
 DOMContentLoaded event waits for **ALL** scripts to execute, except for async scripts
 DOMContentLoader does not wait for any async script
 scripts not guaranteed to execute in order
+useful for 3rd party scripts like google analytics, where your code won't need to interact with
 
 
 // defer
 scripts are fetched asynchronously, but executed only after HTML is completely parsed
 DOMContentLoader event fires after defer script is executed
 scripts are executed in order
+useful for when loading libraries that you use in your own code, that need to be fetched first
 
 */
