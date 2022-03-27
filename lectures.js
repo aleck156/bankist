@@ -352,3 +352,25 @@ window.addEventListener('scroll', function (e) {
 // };
 // const observer = new IntersectionObserver(observerCallback, observerOptions);
 // observer.observe(section1);
+
+/*
+///////////////////////////////////////
+// REGULAR vs ASYNC vs DEFER
+
+// regular
+scripts are fetched and executed after the HTML is completely parsed
+
+
+// async
+scripts are fetched asynchronously and executed immediately, while the HTML is still being parsed
+DOMContentLoaded event waits for **ALL** scripts to execute, except for async scripts
+DOMContentLoader does not wait for any async script
+scripts not guaranteed to execute in order
+
+
+// defer
+scripts are fetched asynchronously, but executed only after HTML is completely parsed
+DOMContentLoader event fires after defer script is executed
+scripts are executed in order
+
+*/

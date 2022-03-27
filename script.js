@@ -272,3 +272,15 @@ const sliderComponent = function () {
 };
 
 sliderComponent();
+
+///////////////////////////////////////
+// 202. Lifecycle DOM Events
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log(`HTML parsed and DOM tree built!`);
+});
+
+document.addEventListener('load', function (e) {
+  console.log(`Page fully loaded`);
+  console.log(e);
+});
